@@ -2,13 +2,13 @@
     export let name
     export let value = ''
     export let label = 'NOT SET'
-    export let valid
+    export let invalid
     export let validators = []
     export let options = null
-    $: valid = !validators.map(callback => callback(value)).includes(false)
+    $: invalid = validators.map(callback => callback(value)).includes(false)
 </script>
 
-<label class="{valid ? '' : 'invalid'}">
+<label class:invalid>
     <span>{label}</span>
     {#if options === null}
         <input bind:value name={name}>
