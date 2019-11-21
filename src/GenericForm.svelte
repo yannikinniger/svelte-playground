@@ -2,7 +2,7 @@
     import CustomInput from "./inputs/GenericInput.svelte";
 
     export let formFields
-    export let submitCallback = () => { }
+    export let submitCallback = formParameters => { }
 
     function handleSubmit(event) {
         const formData = new FormData(event.target)
