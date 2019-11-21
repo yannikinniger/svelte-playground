@@ -2,8 +2,6 @@
     import GenericForm from './GenericForm.svelte'
     import { Validators } from './validators'
 
-    export let name
-
     const formFields = [
         { name: 'name', label: 'Name', validators: [Validators.required()] },
         {

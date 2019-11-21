@@ -1,6 +1,6 @@
 <script>
     export let name
-    export let value = ""
+    export let value = ''
 </script>
 
-<input bind:value name={name} />
+<input bind:value {name} />
