@@ -1,12 +1,12 @@
 <script>
-  export let value;
-  export let options = [];
-  export let label = "NOT SET";
+    export let name
+    export let value = ""
+    export let options = []
 </script>
 
-<select bind:value>
-  {#each options as option}
+<select bind:value name={name}>
     <option selected>Please select</option>
-    <option value={option.value}>{option.label}</option>
-  {/each}
+    {#each options as option}
+        <option value={option.value}>{option.label}</option>
+    {/each}
 </select>

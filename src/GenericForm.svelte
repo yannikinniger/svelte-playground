@@ -1,28 +1,16 @@
 <script>
-    import CustomInput from "./Input.svelte";
-    import { Validators } from "./validators";
+    import CustomInput from "./inputs/GenericInput.svelte";
 
-    const formFields = [
-        {name: 'name', label: 'Name', validators: [Validators.required()]},
-        {name: 'first_name', label: 'First Name', validators: [Validators.required(), Validators.minLength(4)]},
-        {name: 'test', label: 'Test'},
-        {name: 'iban', label: 'IBAN', validators: [Validators.iban()]},
-        {
-            name: 'location', label: 'Ort', validators: [Validators.required()],
-            options: [
-                {label: 'Bern', value: 'bern'},
-                {label: 'Basel', value: 'basel'},
-                {label: 'Zürich', value: 'zurich'},
-            ]
-        },
-    ]
+    export let formFields
+    export let submitCallback = () => { }
 
     function handleSubmit(event) {
         const formData = new FormData(event.target)
-        const object = {};
+        const formParameters = {};
         formData.forEach((value, key) => {
-            object[key] = value
+            formParameters[key] = value
         });
+        submitCallback(formParameters)
     }
 </script>
 
