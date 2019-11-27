@@ -8,14 +8,10 @@
     export let invalid
     export let validators = []
     export let options = null
+    export let type = null
     $: invalid = validators.map(callback => callback(value)).includes(false)
 
-    const inputs = {
-        text: TextInput,
-        select: SelectInput,
-    }
-
-    let input = options === null ? inputs.text : inputs.select
+    const onChanged = event => (value = event.target.value)
 </script>
 
 <style>
@@ -26,5 +22,11 @@
 
 <label class:invalid>
     <span>{label}</span>
-    <svelte:component this={input} {name} bind:value {options} />
+    {#if options === null}
+        <TextInput {name} {onChanged} {type} />
+    {:else if options.length > 1}
+        <SelectInput {name} {onChanged} {options} />
+    {:else}
+        <p>Unkonwn input</p>
+    {/if}
 </label>
