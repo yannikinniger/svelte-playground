@@ -1,5 +1,6 @@
 <script>
     import GenericForm from './GenericForm.svelte'
+    import User from './user/User.svelte'
     import { Validators } from './validators'
 
     const formFields = [
@@ -37,4 +38,5 @@
 
 <main>
     <GenericForm {formFields} submitCallback={log} />
+    <User />
 </main>
