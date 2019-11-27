@@ -9,7 +9,8 @@
             label: 'First Name',
             validators: [Validators.required(), Validators.minLength(4)],
         },
-        { name: 'test', label: 'Test' },
+        { name: 'password', label: 'Password', type: 'password' },
+        { name: 'date', label: 'Date', value: new Date(), type: 'date' },
         { name: 'iban', label: 'IBAN', validators: [Validators.iban()] },
         {
             name: 'location',
