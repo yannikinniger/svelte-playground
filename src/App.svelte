@@ -10,7 +10,13 @@
             validators: [Validators.required(), Validators.minLength(4)],
         },
         { name: 'password', label: 'Password', type: 'password' },
-        { name: 'date', label: 'Date', value: new Date(), type: 'date' },
+        {
+            name: 'email',
+            label: 'Email',
+            type: 'email',
+            validators: [Validators.required(), Validators.email()],
+        },
+        { name: 'date', label: 'Date', value: Date.now(), type: 'date' },
         { name: 'iban', label: 'IBAN', validators: [Validators.iban()] },
         {
             name: 'location',
