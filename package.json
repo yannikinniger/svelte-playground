@@ -16,6 +16,9 @@
     "node-sass": "^4.13.0"
   },
   "dependencies": {
+    "firebase": "^7.5.0",
+    "rxfire": "^3.9.2",
+    "rxjs": "^6.5.3",
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
