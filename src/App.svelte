@@ -37,6 +37,6 @@
 </script>
 
 <main>
-    <GenericForm {formFields} submitCallback={log} />
+    <!-- <GenericForm {formFields} submitCallback={log} /> -->
     <User />
 </main>
