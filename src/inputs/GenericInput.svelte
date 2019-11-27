@@ -5,13 +5,15 @@
     export let name
     export let value = ''
     export let label = 'NOT SET'
-    export let invalid
     export let validators = []
     export let options = null
     export let type = null
-    $: invalid = validators.map(callback => callback(value)).includes(false)
+    let invalid
 
-    const onChanged = event => (value = event.target.value)
+    const onBlur = event => {
+        value = event.target.value
+        invalid = validators.map(callback => callback(value)).includes(false)
+    }
 </script>
 
 <style>
@@ -23,9 +25,9 @@
 <label class:invalid>
     <span>{label}</span>
     {#if options === null}
-        <TextInput {name} {onChanged} {type} />
+        <TextInput {name} {onBlur} {type} />
     {:else if options.length > 1}
-        <SelectInput {name} {onChanged} {options} />
+        <SelectInput {name} {onBlur} {options} />
     {:else}
         <p>Unkonwn input</p>
     {/if}

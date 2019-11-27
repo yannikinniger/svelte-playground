@@ -1,5 +1,5 @@
 <script>
-    import CustomInput from './inputs/GenericInput.svelte'
+    import GenericInput from './inputs/GenericInput.svelte'
 
     export let formFields
     export let submitCallback = formParameters => {}
@@ -16,7 +16,7 @@
 
 <form id="form" on:submit|preventDefault={handleSubmit}>
     {#each formFields as formField}
-        <CustomInput {...formField} />
+        <GenericInput {...formField} />
     {/each}
     <button type="submit">Submit</button>
 </form>
