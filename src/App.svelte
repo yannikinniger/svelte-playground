@@ -19,14 +19,14 @@
         {
             name: 'first_name',
             label: 'First Name',
-            validators: [Validators.required(), Validators.minLength(4)]
+            validators: [Validators.required(), Validators.minLength(4)],
         },
         { name: 'password', label: 'Password', type: 'password' },
         {
             name: 'email',
             label: 'Email',
             type: 'email',
-            validators: [Validators.required(), Validators.email()]
+            validators: [Validators.required(), Validators.email()],
         },
         { name: 'date', label: 'Date', value: Date.now(), type: 'date' },
         { name: 'iban', label: 'IBAN', validators: [Validators.iban()] },
@@ -37,9 +37,9 @@
             options: [
                 { label: 'Bern', value: 'bern' },
                 { label: 'Basel', value: 'basel' },
-                { label: 'Zürich', value: 'zurich' }
-            ]
-        }
+                { label: 'Zürich', value: 'zurich' },
+            ],
+        },
     ]
 
     function log(formData) {
@@ -52,4 +52,5 @@
         <UserComponent />
     </FirebaseApp>
     <!-- <GenericForm {formFields} submitCallback={log} /> -->
+    <h1>Test</h1>
 </main>
